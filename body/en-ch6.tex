@@ -1,0 +1,42 @@
+\chapter{Version History}
+We revised our templates now and then. This section shows the version story of ElegantBook. We have nearly 100 submits and 16 releases on GitHub since uploaded.
+
+\datechange{2020/04/12}{release of v3.11, \textcolor{red}{\textbf{LAST} version of 3.x}.}
+
+\begin{change}
+  \item \textbf{! Fix}: Fix \lstinline{natbib option clash} problems caused by \lstinline{gbt7714} updates.
+  \item Remove \lstinline{base} decorations and its options since \lstinline{pgfornament} package is not included in \TeX{} Live 2020.
+  \item Fix spacing problem in some environments.
+  \item Introduce language option for Italian, \lstinline{lang=it}.
+\end{change}
+
+
+\datechange{2020/02/10}{release of v3.10}
+
+\begin{change}
+  \item Introduce \lstinline{math} for math font, optional styles are \lstinline{newtx} and \lstinline{cm}.\\
+  \textbf{Notice}: The math font \lstinline{newtxmath} in previous versions is reset to default \LaTeX{} math font, to keep previous math font, please declare \lstinline{math=newtx}.
+  \item Introduce \lstinline{chinesefont} option, with \lstinline{founder}, \lstinline{ctexfont} and \lstinline{nofont} available.
+  \item Turn author information on the cover optional and add customized command \lstinline{\bioinfo}.
+  \item Add version history with command \lstinline{\datechange} and environment \lstinline{change}.
+  \item Add Chinese chapter style \lstinline{scheme} with option \lstinline{chinese}.
+  \item Since the bug raised by \lstinline{\lvert} is fixed, exchange package positions of \lstinline{ctex} and \lstinline{amsmath}.
+  \item Drop \lstinline{\lastpage} from header to avoid page anchor bug and adding \lstinline{\frontmatter}.
+  \item Revise bibliography option \lstinline{cite} with optional styles \lstinline{numbers},\lstinline{authoryear} and \lstinline{super}.
+  \item Introduce bibliography style option \lstinline{bibstyle}, with default bib style \lstinline{apalike} for English mode and \lstinline{gbt7714} package for Chinese mode.
+\end{change}
+
+\datechange{2019/08/18}{release of v3.09}
+
+\begin{change}
+  \item Remove \lstinline{\elegantpar} temporary and remind users to use \lstinline{\marginnote} and \lstinline{\marginpar} instead.
+  \item Use \lstinline{esint} to display integral operator.
+  \item Add new command \lstinline{toc}, with options  \lstinline{onecol} and \lstinline{twocol}.
+  \item Add new option \lstinline{cite} \lstinline{super} for superscript-displayed citation.
+  \item Revise \lstinline{problemset}.
+\end{change}
+
+\nocite{en2,en3}
+\bibliography{reference}
+\appendix
+

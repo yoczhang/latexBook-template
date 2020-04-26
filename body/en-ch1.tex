@@ -1,0 +1,152 @@
+\chapter{Elegant\LaTeX{} Templates}
+Elegant\LaTeX{} Program developers are intended to provide you beautiful, elegant, user-friendly templates. Currently, the Elegant\LaTeX{} is composed of \href{https://github.com/ElegantLaTeX/ElegantNote}{ElegantNote}, \href{https://github.com/ElegantLaTeX/ElegantBook}{ElegantBook}, \href{https://github.com/ElegantLaTeX/ElegantPaper}{ElegantPaper}, designed for typesetting notes, books, and working papers respectively. Latest releases are strongly recommended! This guide is aimed at briefly introducing the 101 of this template. For any other question, suggestion or comment, feel free to contact us on GitHub \href{https://github.com/ElegantLaTeX/ElegantBook/issues}{issues} or email us at \email{elegantlatex2e@gmail.com}.
+
+Contact Infos:
+\begin{itemize}
+  \item Homepage: \href{https://elegantlatex.org/}{https://elegantlatex.org/}
+  \item GitHub: \href{https://github.com/ElegantLaTeX/}{https://github.com/ElegantLaTeX/}
+  \item CTAN: \href{https://ctan.org/pkg/elegantbook}{https://ctan.org/pkg/elegantbook}
+  \item Wiki: \href{https://github.com/ElegantLaTeX/ElegantBook/wiki}{https://github.com/ElegantLaTeX/ElegantBook/wiki}
+  \item Download: \href{https://github.com/ElegantLaTeX/ElegantBook/releases}{release}, \href{https://github.com/ElegantLaTeX/ElegantBook/archive/master.zip}{latest version}
+  \item Weibo: Elegant\LaTeX{}
+  \item Wechat: Elegant\LaTeX{}
+  \item QQ: 692108391
+  \item Email: \email{elegantlatex2e@gmail.com}
+\end{itemize}
+
+
+\section{ElegantBook Updates}
+
+Version 3.11 is the last version of 3.x, it's base upon 3.10, mainly to resolve \TeX{} Live 2020 compilation errors caused by \lstinline{gbt7714} compatibility issues. What\rq s new in this version:
+
+\begin{enumerate}
+  \item \textbf{! Fix}: Fix \lstinline{natbib option clash} problems caused by \lstinline{gbt7714} updates.
+  \item Remove \lstinline{base} decorations and its options since \lstinline{pgfornament} package is not included in \TeX{} Live 2020.
+  \item Fix spacing problem in some environments.
+  \item Introduce language option for Italian, \lstinline{lang=it}.
+\end{enumerate}
+
+
+\begin{note}
+  If you are using previous version, please delete \lstinline|\hypersetup{pageanchor=true}| and add \lstinline{\frontmatter} after \lstinline{\maketitle} and before \lstinline{\tableofcontents}. Users for 2.x, please refer to \href{https://github.com/ElegantLaTeX/ElegantBook/wiki/convert}{conversion}.
+\end{note}
+
+\section{Installation and Update}
+Both portable version and installation package are available for this template, online usage is optional as well.
+
+\subsection{To Use Templates Online}
+Visit \href{https://www.overleaf.com/}{Overleaf} to use our template online anywhere and anytime without local installation. To find our template, search \lstinline{elegantlatex} in the \lstinline{templates} or simply visit \href{https://www.overleaf.com/latex/templates?addsearch=elegantlatex}{search result}, choose the template you prefer and \lstinline{Open as Template} to own a copy yourself to edit freely. To learn more about Overleaf, please refer to \href{https://www.overleaf.com/learn}{Documentation}.
+
+\begin{remark}
+  On Overleaf, please use \hologo{XeLaTeX} to compile articles in Chinese and \hologo{pdfLaTeX} to compile articles in English.
+\end{remark}
+
+\subsection{To Use Portable Version}
+For portable version, simply download lastest ElegantBook-master from GitHub or CTAN (to be more accurate, download \lstinline{elegantbook.cls}) and save the file(s) under your working directory. This way of installation is simple and convenient, but you have to manually update \lstinline{cls} now and then.
+
+\subsection{To Use Local Installation Version}
+If you are a \TeX{} Live 2019 user, using the \lstinline{tlshell}\footnote{namely, \TeX{} Live Manager} of \TeX{} Live 2019 direct installation package is strongly recommended. Simply search and open \lstinline{tlshell}, click on \lstinline{File -> Load Default Repository} or customize repository by \lstinline{Options}. Wait till the repository loads successfully, search \lstinline{elegantbook} by name, installation and update is just a click away.
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.7\textwidth]{tlshell.png}
+  \caption{Use \TeX{} Live Shell to Install ElegantBook Template}
+\end{figure}
+
+\subsection{Update Templates}
+If you fail to update templates using \lstinline{tlshell}, please use cmd to update all the packages or switch to portable version instead.
+
+Use the following commands(administrator privileges) to update:
+\begin{lstlisting}
+tlmgr update --self 
+tlmgr update --all
+\end{lstlisting}
+
+To learn more, please refer to \href{https://tex.stackexchange.com/questions/55437/how-do-i-update-my-tex-distribution}{How do I update my \TeX{} distribution?}
+
+\subsection{Other Release Versions}
+If you are a \TeX{} Live 2018 user and would like to update to \TeX{} Live 2019, the official solution is to uninstall 2018. If you want to save the bother of uninstallation and installation, please copy \lstinline{elegantbook.cls} to the installation directory of \TeX{} Live 2018 (default: \lstinline|C:\texlive\2018\texmf-dist\tex\latex\elegantbook| ), run \lstinline{texhash} in cmd.
+
+Excuse me? You are a  C\TeX{}  user? Sorry, this template is incompatible with C\TeX{}.
+
+For more details about the installation and usage of \TeX{} Live 2019, the compatibility of C\TeX{} and \TeX{} Live, please refer to OG (Official Guide) and/or \href{https://github.com/OsbertWang/install_latex/releases}{Install LaTeX v5.1} by OsbertWang.
+
+\section{User\rq s Selected Works Plan}
+Eight years have passed since the found of Elegant\LaTeX{} Program. It\rq s an honor that our templates are preferred by a lot of users. Hence, in order to promote more interactions among our users and know more about what you need, we are planning to provide a platform to display selected works of our users on GitHub or our homepage. If you want to show us your work(s), contact us via Email or other ways. Or if you have upload your work(s) on GitHub or Gitee etc., share the URL(s) with us. You can visit current available works \href{https://github.com/ElegantLaTeX/Archive/tree/master/Collections}{here}.
+
+\section{About Pull Request}
+For some reasons, pull requests will NOT by accepted since May 20, 2019. For those who want to help improve the templates, submit issues or clone to your own repository to modify under LPPL-1.3c.
+
+\section{Recruit Support Members}
+Recruit support members for Elegant\LaTeX{} to translate template OGs, maintain wiki entries using Markdown, update Wechat articles. No deadline for this recruitment.
+
+So far, Elegant\LaTeX{} has four Support Members:
+\begin{itemize}
+  \item OG Translator: \href{https://github.com/peggy2006xzyz}{YPY};
+  \item Wiki Maintainer: \href{https://github.com/izinngo}{Ingo Zinngo}, \href{https://github.com/xiaohao890809}{Xiaohao890809};
+  \item QQ Group Manager \& FAQ Maintainer: \href{https://github.com/sikouhjw}{Sikouhjw}.
+\end{itemize}
+
+BTW, thank \href{https://github.com/stone-zeng}{Xiangdong Zeng}, \href{https://github.com/latexers}{Zhuluren}, etc. for their help.
+
+\section{Acknowledgement}
+The number of stars on GitHub for ElegantBook reached 100 on May 20, 2019\footnote{372 stars by February 8, 2020!}.Thank China\TeX{} and \href{http://www.latexstudio.net/}{\LaTeX{} studio} for their promotion. \LaTeX{} studio offers tons of valuable posts and templates for discovery. It is the most comprehensive website on \LaTeX{} in China. 
+
+If you like our template, star on GitHub.
+
+\section{Donation}
+To express your love for our templates and/or our developers, please do not hesitate to tip us. Since last release of 3.08, we have received about 1,500 RMB! (The emergence of a millionaire is on the way. Loading... )
+\begin{figure}[!htb]
+  \centering
+  \includegraphics[width=0.45\textwidth]{donate.jpg}
+\end{figure}
+
+The explanation right of the tip usage belongs to Elegant\LaTeX{} with no supervision. Feel free to tip us. Those who donate more than 10 RMB will be recorded in the Donation List. Thank all the tippers!
+
+\begin{table}[!htb]
+  \centering
+  \caption{Donation List}
+  \begin{tabular}{*{4}{>{\scriptsize}c}|*{4}{>{\scriptsize}c}}
+    \toprule
+    \textbf{Tipper} & \textbf{Amount} & \textbf{Date} & \textbf{Channel} & \textbf{Tipper} & \textbf{Amount} & \textbf{Date} & \textbf{Channel} \\
+    \midrule
+    Lerh  & 10 RMB & 2019/05/15 & Wechat    & yueguodipingxian & 10 RMB & 2019/05/15 & Wechat \\
+    yinsang    & 20 RMB & 2019/05/27 & Wechat    & *kong    & 10 RMB & 2019/05/30 & Wechat \\
+    latexstudio.net & 666 RMB & 2019/06/05 & Alipay   & A*n   & 40 RMB & 2019/06/15 & Wechat \\
+    * xia   & 22 RMB & 2019/06/15 & Wechat    & * qian  & 21 RMB  & 2019/06/15 & Wechat \\
+    Cassis & 11 RMB & 2019/06/30 & Wechat    & * jun    & 10 RMB & 2019/07/23 & Wechat \\
+    P*u   & 50 RMB & 2019/07/30 & Wechat    & * meng    & 19 RMB & 2019/08/28 & Wechat \\
+    Qu Doudou   & 10 RMB & 2019/08/28 & Wechat    & Li Bo    & 100 RMB & 2019/10/06 & Wechat \\
+    Njustsll & 10 RMB & 2019/10/11 & Wechat    & Liu Zhikuo   & 99.99 RMB & 2019/10/15 & Alipay \\
+    * tao   & 16 RMB & 2019/10/17 & Wechat    & Chini    & 12 RMB & 2019/10/17 & Alipay \\
+    yuanfengjing & 10 RMB & 2019/10/28 & Wechat    & Guo Deliang   & 88 RMB & 2019/11/03 & Wechat \\
+    ziqiangbuxi  & 20 RMB & 2019/11/04 & Alipay   & dushuzhichong  & 20 RMB & 2019/11/18 & Wechat \\
+    * deng    & 10 RMB & 2019/11/18 & Wechat    & * zhe   & 20 RMB & 2019/11/18 & Wechat \\
+    anonymous    & 10 RMB & 2019/11/24 & Wechat    & Jiye Qian & 66 RMB & 2019/12/04 & Wechat \\
+    * yang   & 20 RMB & 2019/12/05 & Wechat    & Catcher & 11 RMB & 2019/12/08 & Alipay \\
+    xierbotementu & 10 RMB & 2019/12/09 & Alipay   & * wei   & 10 RMB & 2019/12/09 & Wechat \\
+    Simon & 20 RMB & 2019/12/11 & Alipay   & liushangqianyi & 66.60 RMB & 2019/12/18 & Alipay \\
+    yu     & 10 RMB & 2019/12/20 & Alipay   & *chen   & 15 RMB & 2019/12/20 & Wechat \\
+    suifeng   & 20 RMB & 2019/12/27 & Alipay   & Ws    & 23.30 RMB & 2019/12/28 & Wechat \\
+    chuba    & 100 RMB  & 2020/01/02 & Alipay   & p*e   & 20 RMB & 2020/01/03 & Wechat \\
+    Shunmx & 100 RMB & 2020/01/03 & Wechat    & hj    & 10 RMB & 2020/01/03 & Wechat \\
+    F*5   & 10 RMB & 2020/01/03 & Wechat    & S*m   & 20.20 RMB & 2020/01/03 & Wechat \\
+    erdaiqingzhi  & 13 RMB & 2020/01/14 & Alipay   & *?    & 66 RMB & 2020/01/15 & Wechat \\
+    Mr. Xiong & 20 RMB & 2020/01/17 & Wechat    & *bo    & 15 RMB & 2020/01/18 & Wechat \\
+    *Zhe    & 10 RMB & 2020/02/02 & Wechat    &  Jackie &  88.80 RMB  &  2020/02/09 & Wechat \\
+    Henry\_Sun & 50 RMB & 2020/02/14 & Alipay & * Qiao  & 50 RMB & 2020/02/21 & Wechat \\
+    YunLian & 10 RMB & 2020/03/02 & Alipay & S*y  &  10 RMB  &  2020/03/15 & Wechat \\
+    * Ge  & 66.66 RMB & 2020/03/17 & Wechat    &   K*e & 30 RMB & 2020/03/30 & Wechat\\
+    * Yang  &  20 RMB  &  2020/04/02 & Wechat & Shi*n  & 30 RMB & 2020/04/11 & Wechat \\
+    \bottomrule
+  \end{tabular}%
+  \label{tab:donation}%
+\end{table}%
+
+BTW, we provide Certificate of Donation for those who donated, tippers please leave your name(nickname) and email address for us to send the certificates.
+
+\begin{figure}[!htb]
+  \centering
+  \includegraphics[width=0.7\textwidth]{cert.pdf}
+\end{figure}
+

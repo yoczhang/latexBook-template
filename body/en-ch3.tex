@@ -1,0 +1,55 @@
+\chapter{Fonts}
+Leave one chapter to introduce fonts to help users to solve font problems conveniently.
+
+\textcolor{red}{\bfseries Alert} After v3.10, newtx is reset to cm and \lstinline{chinesefont} option is added.
+
+\section{Math Fonts}
+This template defines a new command(\lstinline{math}), with three options:
+\begin{enumerate}
+  \item \lstinline{math=cm}(default), use \LaTeX{} default math font (recommended).
+  \item \lstinline{math=newtx}, use \lstinline{newtxmath} math font (may bring about bugs).
+  \item \lstinline{math=mtpro2}, use \lstinline{mtpro2} package to set math font.
+\end{enumerate}
+
+\section{Use newtx fonts}
+If you use \lstinline{newtx} fonts, type in:
+
+\begin{lstlisting}
+\documentclass[math=newtx]{elegantbook}
+\end{lstlisting}
+
+
+\subsection{Hyphens}
+Since the template uses \lstinline{newtx}, please pay attention to the hyphens. For instance,
+\begin{equation}
+\int_{R^q} f(x,y) dy.\emph{of\kern0pt f}
+\end{equation}
+
+The corresponding code is: 
+\begin{lstlisting}
+\begin{equation}
+\int_{R^q} f(x,y) dy.\emph{of \kern0pt f}
+\end{equation}
+\end{lstlisting}
+
+\section{Symbol Fonts}
+Feedback from some 3.08 users claims that error occurs when using our templates with  \lstinline{yhmath}, \lstinline{esvect} and other packages.
+\begin{lstlisting}
+LaTeX Error:
+Too many symbol fonts declared.
+\end{lstlisting}
+
+The reason is that the template redefines font for math so that no new math font is allowed to be added. To use \lstinline{yhmath} and/or \lstinline{esvect}, please locate \lstinline{yhmath} or \lstinline{esvect} in \lstinline{elegantbook.cls}, uncomment corresponding related code.
+
+\begin{lstlisting}
+%%% use yhmath pkg, uncomment following code
+% \let\oldwidering\widering
+% \let\widering\undefined
+% \RequirePackage{yhmath}
+% \let\widering\oldwidering
+
+%%% use esvect pkg, uncomment following code
+% \RequirePackage{esvect}
+\end{lstlisting}
+
+

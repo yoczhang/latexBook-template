@@ -1,0 +1,362 @@
+\chapter{ElegantBook Settings}
+
+This template is based on the Standard \LaTeX{} book class, so the options of book class work as well (Note that the option of papersize has no effect due to \lstinline{device} option). The default encoding is UTF-8 while \TeX{} Live is recommended. The test environment is Win10 + \TeX{} Live 2019, either \hologo{pdfLaTeX} or \lstinline{XeLaTeX} works fine. \lstinline{XeLaTeX} is preferred for Chinese articles.
+
+\section{Languages}
+We defined one option named \lstinline{lang} which has three alternative values, \lstinline{lang=en} (default) , \lstinline{lang=cn} and \lstinline{lang=it}\footnote{Provided by \href{https://github.com/VincentMVV}{VincentMVV}, detail in \href{https://github.com/ElegantLaTeX/ElegantBook/issues/85}{GitHub: Italian translation}.}. Different values will alter the captions of figure/table, abstract name, refname, etc. You can use this option as
+\begin{lstlisting}
+\documentclass[en]{elegantbook} 
+\documentclass[lang=en]{elegantbook}
+\end{lstlisting}
+
+\begin{remark}
+Chinese Characters  are acceptable \textbf{ONLY} in \lstinline{lang=cn}. If you would like to include Chinese characters under (\lstinline{lstlisting}) environment, please use \hologo{XeLaTeX} to compile.
+\end{remark}
+
+\section{Device Mode Option}
+The option for device (\lstinline{device}) was originally used in ElegantNote, now we include this option in ElegantBook\footnote{Pictures have to be modified accordingly.} as well. Activate iPad mode in the following way\footnote{Default size: normal, A4 paper.}:
+\begin{lstlisting}
+\documentclass[pad]{elegantbook} %or
+\documentclass[device=pad]{elegantbook}
+\end{lstlisting}
+
+\section{Color Themes}
+This template contains 5 color themes, i.e. \textcolor{structure1}{\lstinline{green}}\footnote{Original default theme.}, \textcolor{structure2}{\lstinline{cyan}}, \textcolor{structure3}{\lstinline{blue}}(default), \textcolor{structure4}{\lstinline{gray}}, \textcolor{structure5}{\lstinline{black}}. You can choose \lstinline{green} with
+\begin{lstlisting}
+\documentclass[green]{elegantbook} %or
+\documentclass[color=green]{elegantbook}
+\end{lstlisting}
+
+
+\begin{table}[htbp]
+\caption{ElegantBook Themes\label{tab:color thm}}
+\centering
+\begin{tabular}{ccccccc}
+\toprule
+          & \textcolor{structure1}{green} 
+          & \textcolor{structure2}{cyan} 
+          & \textcolor{structure3}{blue}
+          & \textcolor{structure4}{gray} 
+          & \textcolor{structure5}{black} 
+          & Main Environments\\
+\midrule
+structure & \makecell{{\color{structure1}\rule{1cm}{1cm}}}
+        & \makecell{{\color{structure2}\rule{1cm}{1cm}}}
+        & \makecell{{\color{structure3}\rule{1cm}{1cm}}} 
+        & \makecell{{\color{structure4}\rule{1cm}{1cm}}} 
+        & \makecell{{\color{structure5}\rule{1cm}{1cm}}} 
+        & chapter  section  subsection \\
+main      & \makecell{{\color{main1}\rule{1cm}{1cm}}}
+        & \makecell{{\color{main2}\rule{1cm}{1cm}}}
+        & \makecell{{\color{main3}\rule{1cm}{1cm}}}
+        & \makecell{{\color{main4}\rule{1cm}{1cm}}}
+        & \makecell{{\color{main5}\rule{1cm}{1cm}}}
+        & definition  exercise  problem  \\
+second    & \makecell{{\color{second1}\rule{1cm}{1cm}}}
+        & \makecell{{\color{second2}\rule{1cm}{1cm}}}
+        & \makecell{{\color{second3}\rule{1cm}{1cm}}}
+        & \makecell{{\color{second4}\rule{1cm}{1cm}}}
+        & \makecell{{\color{second5}\rule{1cm}{1cm}}}
+        & theorem  lemma  corollary\\
+third     & \makecell{{\color{third1}\rule{1cm}{1cm}}}
+        & \makecell{{\color{third2}\rule{1cm}{1cm}}}
+        & \makecell{{\color{third3}\rule{1cm}{1cm}}}
+        & \makecell{{\color{third4}\rule{1cm}{1cm}}}
+        & \makecell{{\color{third5}\rule{1cm}{1cm}}}
+        & proposition\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+If you want to customize the colors, please select \lstinline{nocolor} or use \lstinline{color=none} and declare the main, second, and third colors in the preamble section as follows:
+\begin{lstlisting}[frame=single]
+\definecolor{structurecolor}{RGB}{60,113,183}
+\definecolor{main}{RGB}{0,166,82}%
+\definecolor{second}{RGB}{255,134,24}%
+\definecolor{third}{RGB}{0,174,247}% 
+\end{lstlisting}
+
+\section{Cover}
+\subsection{Customized Cover}
+From v3.10, customized cover is allowed, you can choose or hide any element as you prefer. Current optional elements are:
+\begin{itemize}
+  \item title: \lstinline{\title}
+  \item subtitle: \lstinline{\subtitle}
+  \item author: \lstinline{\author}
+  \item institute: \lstinline{\institute}
+  \item date: \lstinline{\date}
+  \item version: \lstinline{\version}
+  \item extra information: \lstinline{\extrainfo}
+  \item cover image: \lstinline{\cover}
+  \item logo: \lstinline{\logo}
+\end{itemize}
+
+Besides, an extra command \lstinline{\bioinfo} is provided with two options--caption and content. For instance, if you want to display \lstinline{Username: 111520}, just type in
+
+\begin{lstlisting}
+\bioinfo{Username}{115520}
+\end{lstlisting}
+
+\subsection{Cover Image}
+The cover image used in this template is from \href{https://pixabay.com/en/tea-time-poetry-coffee-reading-3240766/}{pixabay.com}. The image is completely free and can be used under any circumstance. The cover image size is $1280 \times 1024$. If you would like to change the cover, please crop it according to the size of the cover picture strictly. One free online image clipping site: \href{https://www.fotor.com/cn}{fotor.com}. Feel free to join our QQ Group to get more elegant covers.
+
+\subsection{Logo}
+Aspect ratio of the logo is 1:1 in this guide, i.e. a square picture. To replace the logo, do remember to choose the appropriate picture.
+
+\subsection{Stylized Cover}
+Want to use stylized cover?(For instance, A4-sized PDF designed by Adobe Illustrator) Please comment out \lstinline{\maketitle} and use \lstinline{pdfpages} to insert the cover. Similar for using \lstinline{titlepage}. If you would like to use the cover in version 2.x, please refer to \href{https://github.com/EthanDeng/etitlepage}{etitlepage}.
+
+\section{Chapter Title Display Styles}
+
+This template contains 2 sets of \textit{title display styles},\lstinline{hang}(default) and \lstinline{display} style. For the former, chapter title is displayed on a single line (\lstinline{hang}). For the latter, chapter title is displayed on a double line (\lstinline{display}).In this guide, we use \lstinline{hang} . To change display style, use:
+\begin{lstlisting}
+\documentclass[hang]{elegantbook} %or
+\documentclass[titlestyle=hang]{elegantbook}
+\end{lstlisting}
+
+
+\section{Introduction of Math Environments}
+We defined two sets of theorem modes, \lstinline{simple} style and \lstinline{fancy} style (default). You may change to \lstinline{simple} mode by
+
+\begin{lstlisting}
+\documentclass[simple]{elegantbook} %or
+\documentclass[mode=simple]{elegantbook}
+\end{lstlisting}
+
+In this template, we defined four different theorem class environments
+
+\begin{itemize}
+\item \textit{Theorem Environment}, including title and content, numbering corresponding to chapter. Three types depending on the format:
+   \begin{itemize}
+      \item \textcolor{main}{\textbf{definition}} environment, the color is  \textcolor{main}{main};
+      \item \textcolor{second}{\textbf{theorem, lemma, corollary}} environment, the color is \textcolor{second} {second};
+      \item \textcolor{third}{\textbf{proposition}} environment, the color is \textcolor{third}{third}.
+   \end{itemize}
+\item \textit{Example Environments}, including \textbf{example, exercise, problem} environment, auto numbering corresponding to chapter.
+\item \textit{Proof Environment}, including \textbf{proof, note} environment containing introductory symbol (\textbf{note} environment) or ending symbol (\textbf{proof} environment).
+\item \textit{Conclusion Environments}, including \textbf{conclusion, assumption, property, remark and solution}\footnote{We also define an option \lstinline{result}, which can hide the \lstinline{solution} and \lstinline{proof} environments. You can switch between \lstinline{result=answer} and \lstinline{result=noanswer}.} environments, all of which begin with boldfaced words, with format consistent with normal paragraphs.
+\end{itemize}
+
+\subsection{Theorem Class Environments}
+Since the template uses the \lstinline{tcolorbox} package to customize the theorem class environments, it is slightly different from the normal theorem environments. The usage is as follows:
+\begin{lstlisting}
+\begin{theorem}{<theorem name>}{<label>}
+The content of theorem.
+\end{theorem}
+\end{lstlisting}
+
+The first parameter \lstinline{<theorem name>} represents the name of the theorem, and the second parameter \lstinline{label} represents the label used in cross-reference with \verb|ref{thm:label}|. Note that cross-references must be prefixed with \lstinline{thm:}. 
+
+Other theorem class environments with the same usage includes:
+
+\begin{table}[htbp]
+   \centering
+   \caption{Theorem Class Environments}
+     \begin{tabular}{llll}
+     \toprule
+     Environment & Label text & Prefix & Cross-reference \\
+     \midrule
+     definition & label & def   & \lstinline|\ref{def:label}| \\
+     theorem & label & thm   & \lstinline|\ref{thm:label}| \\
+     lemma & label & lem   & \lstinline|\ref{lem:label}| \\
+     corrlary & label & cor   & \lstinline|\ref{cor:label}| \\
+     proposition & label & pro   & \lstinline|\ref{pro:label}| \\
+     \bottomrule
+     \end{tabular}%
+   \label{tab:theorem-class}%
+ \end{table}%
+ 
+
+\subsection{Other Customized Environments}
+The other three math environments can be called directly since there are no additional option for them, e.g. \lstinline{example}:
+\begin{lstlisting}
+\begin{example}
+This is the content of example environment.
+\end{example}
+\end{lstlisting}
+
+The effect is as follows:
+
+\begin{example}
+This is the content of example environment.
+\end{example}
+
+These are all similar environments with slight differences lies in:
+
+\begin{itemize}
+   \item Example, exercise, problem environments number within chapter;
+   \item Note begins with introductory symbol and proof ends with ending symbol;
+   \item Conclusion and other environments are normal paragraph environments with boldfaced introductory words.
+\end{itemize}
+
+
+\section{List Environments}
+This template uses \lstinline{tikz} to customize the list environments, with \lstinline{itemize} environment customized to the third depth and \lstinline{enumerate} environment customized to fourth depth. The effect is as follows\\[2ex]
+\begin{minipage}[b]{0.49\textwidth}
+\begin{itemize}
+   \item first item of nesti;
+   \item second item of nesti;
+   \begin{itemize}
+      \item first item of nestii;
+      \item second item of nestii;
+      \begin{itemize}
+         \item first item of nestiii;
+         \item second item of nestiii.
+      \end{itemize}   
+   \end{itemize}
+\end{itemize}
+\end{minipage}
+\begin{minipage}[b]{0.49\textwidth}
+\begin{enumerate}
+   \item first item of nesti;
+   \item second item of nesti;
+   \begin{enumerate}
+      \item first item of nestii;
+      \item second item of nestii;
+      \begin{enumerate}
+         \item first item of nestiii;
+         \item second item of nestiii.
+      \end{enumerate}   
+   \end{enumerate}
+\end{enumerate}
+\end{minipage}
+
+\section{Bibliography}
+
+This template uses \hologo{BibTeX} to generate the bibliography, the default bibliography style is \lstinline{aer}. Let's take a glance at the citation effect. ~\cite{en1} use data from a major peer-to-peer lending marketplace in China to study whether female and male investors evaluate loan performance differently. 
+
+If you want to use \hologo{BibTeX}, you must create a file named \lstinline{reference.bib}, add bib items (from Google Scholar, Mendeley, EndNote, and etc.) to \lstinline{reference.bib} file, then cite the bibkey in the \lstinline{tex} file. The Bib\TeX{} will automatically generate the bibliography for the reference you cited. If you want to add some noncited reference to the bibliography, you can use 
+\begin{lstlisting}[frame=single]
+\nocite{EINAV2010,Havrylchyk2018} %or include some bibitems
+\nocite{*} %include all the bibitems
+\end{lstlisting}
+
+Three more options \lstinline{cite=numbers}, \lstinline{cite=super} and \lstinline{cite=authoryear} are available in this new version, with the default setting as \lstinline{numbers} since those major in science and technology use \lstinline{numbers} and/or \lstinline{cite=super} more often. For those who want to use \lstinline{cite=super} or \lstinline{authoryear}, please type in:
+\begin{lstlisting}
+\documentclass[cite=super]{elegantbook} % set cite for super style 
+\documentclass[super]{elegantbook}
+\documentclass[cite=authoryear]{elegantbook} % set cite for author-year style
+\documentclass[authoryear]{elegantbook}
+\end{lstlisting}
+
+To change the bibliography style, this version introduces \lstinline{bibstyle} with default option apalike, for more options, refer to \href{https://www.overleaf.com/learn/latex/Bibtex_bibliography_styles}{\hologo{BibTeX} Bibliography Styles}. Type in
+\begin{lstlisting}
+\documentclass[bibstyle=apalike]{elegantbook} 
+\end{lstlisting}
+
+\section{Preface}
+
+If you want to add a preface before the first chapter with the number of chapter unchanged, please add the preface in the following way:
+\begin{lstlisting}
+\chapter*{Introduction}
+\markboth{Introduction}{Introduction}
+The content of introduction.
+\end{lstlisting}
+
+\section{Content Option and Depth}
+This version adds an option for content \lstinline{toc}, you can  choose either one column(\lstinline{onecol}) or two columns(\lstinline{twocol}). For two columns:
+\begin{lstlisting}
+\documentclass[twocol]{elegantbook}
+\documentclass[toc=twocol]{elegantbook}
+\end{lstlisting}
+
+Default content depth is 1, use
+\begin{lstlisting}
+\setcounter{tocdepth}{2}
+\end{lstlisting}
+to make it 2.
+
+
+\section{Introduction Environment}
+We create a introduction environment to display the structure of chapter. The basic useage is as follows:
+\begin{lstlisting}
+\begin{introduction}
+  \item Definition of Theorem
+  \item Ask for help
+  \item Optimization Problem
+  \item Property of Cauchy Series
+  \item Angle of Corner
+\end{introduction}
+\end{lstlisting}
+And you will get:
+\begin{introduction}
+  \item Definition of Theorem
+  \item Ask for help
+  \item Optimization Problem
+  \item Property of Cauchy Series
+  \item Angle of Corner
+\end{introduction}
+
+You can change the title of this environment by modifying the optional argument of this environment:
+\begin{lstlisting}
+\begin{introduction}[Brief Introduction]
+...
+\end{introduction}
+\end{lstlisting}
+
+\section{Problem Set}
+The environment \lstinline{problemset} is used at the end of each chapter to display corresponding exercises. Just type in the following sentences:
+\begin{lstlisting}
+\begin{problemset}
+  \item exercise 1
+  \item exercise 2
+  \item exercise 3
+\end{problemset}
+\end{lstlisting}
+And you will get:
+\begin{problemset}
+  \item exercise 1
+  \item exercise 2
+  \item exercise 3
+  \item math equation test:
+  \begin{equation}
+  a^2+b^2=c_{2_{i}} (1,2) [1,23]
+  \end{equation}
+\end{problemset}
+\begin{remark}
+If you want to customize the title of \lstinline{problemset}, please change the optional argument like in introduction environment. In this version the \lstinline{problemset} environment automatically appears in the table of contents but not in the header or footer(to be fixed).
+\end{remark}
+
+\begin{solution}
+  If you want to customize the title of \lstinline{problemset}, please change the optional argument like in introduction environment. In this version the \lstinline{problemset} environment automatically appears in the table of contents but not in the header or footer(to be fixed).
+\end{solution}
+
+\section{Margin Notes}
+In 3.08, we introduced \lstinline{marginpar=margintrue} and \lstinline{\elegantpar} (Beta) with piles of bugs. Hence we decide to remove them in 3.09 and will suspend the options till revolutionary optimization. Sorry for all the bugs! However, we retain the option \lstinline{marginpar} for users to get margin motes by activating \lstinline{marginpar=margintrue} and using \lstinline{\marginpar} or \lstinline{marginnote} packages.
+
+\begin{remark}
+Note that text and equation are both available in the margin notes.
+\begin{lstlisting}
+% text
+\marginpar{margin paragraph text}
+
+% equation
+\marginpar{
+\begin{equation}
+  a^2 + b^2 = c^2
+\end{equation}
+}
+\end{lstlisting}
+
+For tables and figures, note that floating environment is not allowed. You have to use \lstinline{includegraphics} or \lstinline{table} and use \lstinline{\captionof} to name it. To get centralized figures or tables, use \lstinline{\centerline} or \lstinline{center}. To learn more, please refer to \href{https://tex.stackexchange.com/questions/5583/caption-of-figure-in-marginpar-and-caption-of-wrapfigure-in-margin}{Caption of Figure in Marginpar}.
+
+\begin{lstlisting}
+% graph with centerline command
+\marginpar{
+  \centerline{
+    \includegraphics[width=0.2\textwidth]{logo.png}
+  }
+  \captionof{figure}{your figure caption}
+}
+
+% graph with center environment
+\marginpar{
+  \begin{center}
+    \includegraphics[width=0.2\textwidth]{logo.png}
+    \captionof{figure}{your figure caption}
+  \end{center}
+}
+\end{lstlisting}
+
+\end{remark}
+
